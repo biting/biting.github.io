@@ -62,7 +62,7 @@ const SITE_DATA = {
       "I received my B.Eng. in Software Engineering from Wuhan University in 2010, and my M.Eng. (2011) and Ph.D. (2017) in Telecommunications from Dublin City University (DCU), Ireland. Prior to joining HUST in July 2023, I worked as a Postdoctoral Researcher at the Performance Engineering Laboratory and the Insight Centre for Data Analytics at DCU (2017–2020), and subsequently as an Assistant Professor at Maynooth University, Ireland (2020–2023)."
     ],
     zh: [
-      "现为华中科技大学网络空间安全学院 6G 移动通信研究中心（天地一体化实验室）副教授，担任国际期刊 <em>IEEE Transactions on Broadcasting</em> 副主编（Associate Editor），IEEE / ACM 会员。",
+      "现为华中科技大学网络空间安全学院 6G 移动通信研究中心（天地一体化实验室）副教授，担任国际期刊 <em>IEEE Transactions on Broadcasting</em> 编委（Associate Editor），IEEE / ACM 会员。",
       "2010 年获武汉大学软件工程学士学位，2011 年和 2017 年先后获爱尔兰都柏林城市大学（Dublin City University, DCU）通信工程硕士与博士学位。2017–2020 年在 DCU（Performance Engineering Laboratory & Insight Centre for Data Analytics）担任博士后研究员，2020–2023 年在爱尔兰梅努斯大学（Maynooth University）担任助理教授，2023 年 7 月加入华中科技大学。"
     ]
   },
@@ -247,7 +247,7 @@ const SITE_DATA = {
       { title: "TPC Member & Reviewer", content: "ACM Web Conference (WWW 2027), AAAI 2026, ACM Multimedia (MM 2025–2026), INFOCOM, GLOBECOM, ICC, WCNC, IEEE TMC, IEEE IoTJ, IEEE TWC, IEEE TVT, etc." }
     ],
     zh: [
-      { title: "期刊副编辑（Associate Editor）", content: "IEEE Transactions on Broadcasting" },
+      { title: "期刊编委（Associate Editor）", content: "IEEE Transactions on Broadcasting" },
       { title: "学术会员", content: "IEEE 会员、ACM 会员、IEEE 通信学会（ComSoc）、IEEE 广播技术学会（BTS）" },
       { title: "程序委员会委员 / 审稿人", content: "ACM Web Conference (WWW 2027)、AAAI 2026、ACM Multimedia (MM2025–2026)、INFOCOM、GLOBECOM、ICC、WCNC、IEEE TMC、IoTJ、TWC、TVT 等。" }
     ]
