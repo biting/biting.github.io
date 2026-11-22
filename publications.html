@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ting Bi (毕挺) | Associate Professor, HUST</title>
+<meta content="Academic homepage of Ting Bi (毕挺), Associate Professor at the School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST)." name="description"/>
+<meta content="Ting Bi, 毕挺, HUST, 6G, Multimedia, AR, XR, QoE, Multimodal LLM, AI Security" name="keywords"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%231d4ed8'/&gt;&lt;text x='50%' y='54%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='44'&gt;TB&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body data-page="archive">
+<header class="navbar" id="navbar">
+<div class="container nav-inner">
+<a class="nav-brand" href="index.html" id="nav-brand">Ting Bi</a>
+<nav aria-label="Main Navigation" class="nav-links" id="nav-links"><a data-i18n="nav.about" href="index.html#about">About</a><a data-i18n="nav.research" href="index.html#research">Research</a><a data-i18n="nav.news" href="index.html#news">News</a><a data-i18n="nav.service" href="index.html#service">Service</a><a data-i18n="nav.publications" href="index.html#publications">Selected</a><a data-i18n="nav.all" href="publications.html">All Publications</a></nav>
+<div class="nav-actions">
+<button aria-label="Switch Language" class="icon-btn lang-btn" id="lang-toggle" type="button">
+          中文
+        </button>
+<button aria-label="Toggle Dark Mode" class="icon-btn" id="theme-toggle" title="Toggle theme" type="button">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="4"></circle>
+<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+</svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+</button>
+<button aria-label="Toggle Menu" class="icon-btn mobile-only" id="menu-toggle" type="button">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</button>
+</div>
+</div>
+</header>
+<main class="container main-layout" id="top">
+
+<section class="section-block" id="publications">
+<div class="section-header-row">
+<div>
+<h2 class="section-title" data-i18n="sections.publications">Publications</h2>
+<p class="section-note" id="pub-note"></p>
+</div>
+<div class="pub-controls">
+<div class="filter-group" id="pub-filter-group" role="tablist">
+<button class="filter-btn active" data-filter="all" data-i18n="pub.all">All</button>
+<button class="filter-btn" data-filter="journal" data-i18n="pub.journal">Journal</button>
+<button class="filter-btn" data-filter="conference" data-i18n="pub.conference">Conference</button>
+<button class="filter-btn" data-filter="preprint" data-i18n="pub.preprint" type="button">Preprint</button><button class="filter-btn" data-filter="chapter" data-i18n="pub.chapter" type="button">Book chapter</button></div>
+<input aria-label="Filter publications" class="pub-search" id="pub-search" placeholder="Filter by keyword or venue..." type="search"/>
+<select aria-label="Year" id="pub-year"></select><select aria-label="Research area" id="pub-area"></select><button class="pub-btn" id="filter-reset" type="button">Reset</button></div>
+</div>
+<p aria-live="polite" class="section-note" id="result-count"></p><div id="publications-container"></div>
+</section></main>
+<footer class="footer">
+<div class="container footer-inner">
+<p id="footer-copy"></p>
+<p id="footer-updated"></p>
+</div>
+</footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="data.js"></script><script src="script.js"></script></body>
+</html>

@@ -1,6 +1,7 @@
 (() => {
+  const isArchive = document.body.dataset.page === "archive";
   const state = {
-    lang: localStorage.getItem("site_lang") || "en",
+    lang: localStorage.getItem("site_lang") === "zh" ? "zh" : "en",
     theme: localStorage.getItem("site_theme") || "light",
     pubFilter: "all",
     pubQuery: ""
@@ -59,7 +60,7 @@
   function renderAbout() {
     $("#about-content").innerHTML = SITE_DATA.about[state.lang].map((para) => `<p>${para}</p>`).join("");
     $("#recruiting-banner").innerHTML = SITE_DATA.recruiting[state.lang];
-    $("#interests-list").innerHTML = SITE_DATA.interests[state.lang].map((item) => `<span class="tag-pill">${item}</span>`).join("");
+    $("#interests-list").innerHTML = SITE_DATA.directions[state.lang].map(d => `<article class="direction-card"><h3>${d.title}</h3><p>${d.desc}</p></article>`).join("");
   }
 
   function renderNews() {
@@ -73,55 +74,36 @@
       .join("");
   }
 
-  function renderPublications() {
-    const t = SITE_DATA.ui[state.lang].pub;
-    const container = $("#publications-container");
-    const q = state.pubQuery.trim().toLowerCase();
-    const filtered = SITE_DATA.publications.filter((pub) => {
-      const matchType = state.pubFilter === "all" || pub.type === state.pubFilter;
-      const haystack = `${pub.title} ${pub.authors} ${pub.venue} ${pub.badge} ${pub.year}`.toLowerCase();
-      return matchType && (!q || haystack.includes(q));
-    });
-
-    if (filtered.length === 0) {
-      container.innerHTML = `<p class="section-note" style="margin-top:16px;">${t.empty}</p>`;
-      return;
+  const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function bibText(p){return String(p.bibtex||'').replace(/\\n/g,'\n')}
+  function publicationCard(pub){
+    const t=SITE_DATA.ui[state.lang].pub;
+    const authors=escapeHTML(pub.authors).replace(/&lt;strong&gt;([\s\S]*?)&lt;\/strong&gt;/g,'<strong>$1</strong>');
+    const link=(url,label)=>/^https?:\/\//.test(url||'')?`<a class="pub-btn" href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`:'';
+    return `<article class="pub-card"><div class="pub-top-row"><span class="venue-badge">${escapeHTML(pub.badge)} · ${pub.year}${pub.type==='preprint'?' · '+t.preprint:''}</span><h3 class="pub-title">${escapeHTML(pub.title)}</h3></div><p class="pub-authors">${authors}</p><p class="pub-venue">${escapeHTML(pub.venue)}</p><div class="pub-actions">${link(pub.paperUrl,t.paper)}${link(pub.codeUrl,t.code)}<button class="pub-btn bibtex-toggle" type="button" data-id="${pub.id}" aria-expanded="false">BibTeX</button></div><div class="bibtex-box" id="bib-${pub.id}"><div class="bibtex-header"><span>BibTeX</span><button class="pub-btn bibtex-copy" type="button" data-id="${pub.id}">${t.copy}</button></div><pre class="bibtex-code">${escapeHTML(bibText(pub))}</pre></div></article>`;
+  }
+  function renderPublications(){
+    const box=$('#publications-container'),zh=state.lang==='zh';
+    if(!isArchive){box.innerHTML=SITE_DATA.selectedPublications.map((ids,i)=>`<section class="selected-group"><h3>${SITE_DATA.directions[state.lang][i].title}</h3>${ids.map(id=>SITE_DATA.publications.find(p=>p.id===id)).filter(Boolean).map(publicationCard).join('')}<a class="topic-link" href="publications.html?area=${['media','agents','networks','security'][i]}">${zh?'查看该领域全部发表':'View all in this area'} ↗</a></section>`).join('');return;}
+    const q=state.pubQuery.trim().toLowerCase(),y=$('#pub-year').value,a=$('#pub-area').value;
+    const pubs=SITE_DATA.publications.filter(p=>(state.pubFilter==='all'||p.type===state.pubFilter)&&(!y||String(p.year)===y)&&(!a||(SITE_DATA.publicationAreas[p.id]||'other')===a)&&(!q||`${p.title} ${p.authors} ${p.venue} ${p.year}`.toLowerCase().includes(q)));
+    $('#result-count').textContent=zh?`显示 ${pubs.length} / ${SITE_DATA.publications.length} 条记录`:`Showing ${pubs.length} of ${SITE_DATA.publications.length} records`;
+    const years=[...new Set(pubs.map(p=>p.year))].sort((a,b)=>b-a);
+    box.innerHTML=years.map(y=>`<section class="pub-year-group"><h2 class="pub-year-heading">${y}</h2>${pubs.filter(p=>p.year===y).map(publicationCard).join('')}</section>`).join('')||SITE_DATA.ui[state.lang].pub.empty;
+  }
+  function renderExtra(){
+    const zh=state.lang==='zh';
+    if(isArchive){
+      document.querySelector('[data-i18n="sections.publications"]').textContent=zh?'全部发表':'All Publications';
+      $('#pub-note').textContent=zh?'全部记录来自所提供的data.js，包含预印本与书籍章节。':'All records from the supplied data.js, including preprints and book chapters.';
+      const opts={'pub-year':[...new Set(SITE_DATA.publications.map(p=>p.year))].sort((a,b)=>b-a).map(y=>[y,y]),'pub-area':[...['media','agents','networks','security'].map((k,i)=>[k,SITE_DATA.directions[state.lang][i].title]),['other',zh?'其他':'Other']]};
+      for(const [id,items] of Object.entries(opts)){const el=$('#'+id),v=el.value;el.innerHTML=`<option value="">${zh?'全部':'All'}</option>`+items.map(([v,n])=>`<option value="${v}">${n}</option>`).join('');el.value=v;}
+      $('#filter-reset').textContent=zh?'重置':'Reset';return;
     }
-
-    const years = [...new Set(filtered.map((p) => p.year))].sort((a, b) => b - a);
-    container.innerHTML = years
-      .map((year) => {
-        const cards = filtered
-          .filter((p) => p.year === year)
-          .map((pub) => {
-            const paperBtn = pub.paperUrl ? `<a class="pub-btn" href="${pub.paperUrl}" target="_blank" rel="noopener noreferrer">${t.paper} ↗</a>` : "";
-            const codeBtn = pub.codeUrl ? `<a class="pub-btn" href="${pub.codeUrl}" target="_blank" rel="noopener noreferrer">${t.code} ↗</a>` : "";
-            return `
-              <article class="pub-card">
-                <div class="pub-top-row">
-                  <span class="venue-badge">${pub.badge}</span>
-                  <h3 class="pub-title">${pub.title}</h3>
-                </div>
-                <p class="pub-authors">${pub.authors}</p>
-                <p class="pub-venue">${pub.venue}</p>
-                <div class="pub-actions">
-                  ${paperBtn}${codeBtn}
-                  <button class="pub-btn bibtex-toggle" type="button" data-id="${pub.id}">${t.bibtex}</button>
-                </div>
-                <div class="bibtex-box" id="bib-${pub.id}">
-                  <div class="bibtex-header">
-                    <span>BibTeX</span>
-                    <button class="pub-btn bibtex-copy" type="button" data-id="${pub.id}">${t.copy}</button>
-                  </div>
-                  <pre class="bibtex-code">${pub.bibtex}</pre>
-                </div>
-              </article>
-            `;
-          })
-          .join("");
-        return `<div class="pub-year-group"><h3 class="pub-year-heading">${year}</h3>${cards}</div>`;
-      })
-      .join("");
+    $('#profile-tagline').textContent=SITE_DATA.profile[state.lang].tagline;
+    $('#all-publications-link').textContent=zh?'全部发表 ↗':'All Publications ↗';
+    const values=[ [zh?'所在城市':'Location',zh?'中国 · 武汉':'Wuhan, China'],[zh?'研究方向':'Research focus',zh?'多体感媒体 · 多智能体通信':'Multi-sensory media · Multi-agent communications'],[zh?'学术编委':'Editorial service',zh?'IEEE Transactions on Broadcasting 副主编；China Communications、Telecommunications Science 青年编委':'Associate Editor, IEEE Transactions on Broadcasting; Young Editorial Board Member, China Communications and Telecommunications Science'] ];
+    $('#profile-facts').innerHTML=values.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
   }
 
   function renderTimeline(listId, items) {
@@ -138,13 +120,12 @@
 
   function renderAll() {
     renderI18n();
-    renderProfile();
-    renderAbout();
-    renderNews();
+    if (!isArchive) { renderProfile(); renderAbout(); renderNews(); renderService(); }
     renderPublications();
-    renderTimeline("#experience-list", SITE_DATA.experience[state.lang]);
-    renderTimeline("#education-list", SITE_DATA.education[state.lang]);
-    renderService();
+    
+    
+    renderExtra();
+    if(isArchive)renderPublications();
   }
 
   function bindEvents() {
@@ -157,7 +138,7 @@
     $("#menu-toggle").addEventListener("click", () => $("#nav-links").classList.toggle("open"));
     $$("#nav-links a").forEach((a) => a.addEventListener("click", () => $("#nav-links").classList.remove("open")));
 
-    $("#copy-email-btn").addEventListener("click", async () => {
+    $("#copy-email-btn")?.addEventListener("click", async () => {
       const email = `${SITE_DATA.emailUser}@${SITE_DATA.emailDomain}`;
       try {
         await navigator.clipboard.writeText(email);
@@ -185,7 +166,7 @@
       const toggleBtn = e.target.closest(".bibtex-toggle");
       if (toggleBtn) {
         const box = $(`#bib-${toggleBtn.dataset.id}`);
-        if (box) box.classList.toggle("open");
+        if (box) { box.classList.toggle("open"); toggleBtn.setAttribute("aria-expanded", String(box.classList.contains("open"))); }
         return;
       }
       const copyBtn = e.target.closest(".bibtex-copy");
@@ -193,7 +174,7 @@
         const pub = SITE_DATA.publications.find((p) => p.id === copyBtn.dataset.id);
         if (!pub) return;
         try {
-          await navigator.clipboard.writeText(pub.bibtex);
+          await navigator.clipboard.writeText(bibText(pub));
           showToast(SITE_DATA.ui[state.lang].toast.bibtexCopied);
         } catch {
           showToast("Copy failed");
@@ -202,7 +183,14 @@
     });
   }
 
+  if(isArchive){
+    for(const id of ['pub-year','pub-area'])$('#'+id).addEventListener('change',renderPublications);
+    $('#filter-reset').addEventListener('click',()=>{state.pubFilter='all';state.pubQuery='';$('#pub-search').value='';$('#pub-year').value='';$('#pub-area').value='';$$('.filter-btn').forEach(b=>b.classList.toggle('active',b.dataset.filter==='all'));renderPublications();});
+  }else{
+    $('#copy-ieee-email-btn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('ting.bi@ieee.org');showToast(SITE_DATA.ui[state.lang].toast.emailCopied)}catch{showToast('ting.bi@ieee.org')}});
+  }
   applyTheme(state.theme);
   renderAll();
   bindEvents();
+  if(isArchive){const a=new URLSearchParams(location.search).get('area');if(a&&[...$('#pub-area').options].some(o=>o.value===a)){$('#pub-area').value=a;renderPublications();}}
 })();

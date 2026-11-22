@@ -1,167 +1,129 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+
+<html data-theme="light" lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ting Bi (毕挺) | Associate Professor, HUST</title>
-  <meta name="description" content="Academic homepage of Ting Bi (毕挺), Associate Professor at the School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST)." />
-  <meta name="keywords" content="Ting Bi, 毕挺, HUST, 6G, Multimedia, AR, XR, QoE, Multimodal LLM, AI Security" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231d4ed8'/><text x='50%' y='54%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='44'>TB</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="research-upgrade.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ting Bi (毕挺) | Associate Professor, HUST</title>
+<meta content="Academic homepage of Ting Bi (毕挺), Associate Professor at the School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST)." name="description"/>
+<meta content="Ting Bi, 毕挺, HUST, 6G, Multimedia, AR, XR, QoE, Multimodal LLM, AI Security" name="keywords"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%231d4ed8'/&gt;&lt;text x='50%' y='54%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='44'&gt;TB&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+
+
 </head>
-<body>
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#top" class="nav-brand" id="nav-brand">Ting Bi</a>
-
-      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#news" data-i18n="nav.news">News</a>
-        <a href="#publications" data-i18n="nav.publications">Publications</a>
-        <a href="#experience" data-i18n="nav.experience">Experience</a>
-        <a href="#service" data-i18n="nav.service">Service</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Switch Language">
+<body data-page="home">
+<header class="navbar" id="navbar">
+<div class="container nav-inner">
+<a class="nav-brand" href="#top" id="nav-brand">Ting Bi</a>
+<nav aria-label="Main Navigation" class="nav-links" id="nav-links"><a data-i18n="nav.about" href="#about">About</a><a data-i18n="nav.research" href="#research">Research</a><a data-i18n="nav.news" href="#news">News</a><a data-i18n="nav.service" href="#service">Service</a><a data-i18n="nav.publications" href="#publications">Selected</a><a data-i18n="nav.all" href="publications.html">All Publications</a></nav>
+<div class="nav-actions">
+<button aria-label="Switch Language" class="icon-btn lang-btn" id="lang-toggle" type="button">
           中文
         </button>
-        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle Dark Mode" title="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <button id="menu-toggle" class="icon-btn mobile-only" type="button" aria-label="Toggle Menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
+<button aria-label="Toggle Dark Mode" class="icon-btn" id="theme-toggle" title="Toggle theme" type="button">
+<svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="4"></circle>
+<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+</svg>
+<svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+</button>
+<button aria-label="Toggle Menu" class="icon-btn mobile-only" id="menu-toggle" type="button">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<line x1="3" x2="21" y1="12" y2="12"></line>
+<line x1="3" x2="21" y1="18" y2="18"></line>
+</svg>
+</button>
+</div>
+</div>
+</header>
+<main class="container main-layout" id="top">
+<section aria-label="Profile" class="hero-card">
 
-  <main id="top" class="container main-layout">
-    <section class="hero-card" aria-label="Profile">
-      <div class="avatar-wrap">
-        <img
-          src="assets/avatar.jpg"
-          alt="Ting Bi"
-          class="avatar-img"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        />
-        <div class="avatar-fallback" aria-hidden="true">TB</div>
-      </div>
+<div class="hero-info">
+<div class="hero-name-row">
+<h1 id="profile-name">Ting Bi</h1>
+<span class="name-secondary" id="profile-name-secondary">毕挺</span>
+</div>
+<p class="hero-role" id="profile-role"></p>
+<p class="hero-affil" id="profile-affil"></p><p class="profile-tagline" id="profile-tagline"></p>
+<div class="hero-meta">
+<button class="meta-chip copy-email-btn" id="copy-email-btn" title="Click to copy email" type="button">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="16" rx="2" width="20" x="2" y="4"></rect>
+<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+</svg>
+<span id="profile-email-display">tingbi [AT] hust.edu.cn</span>
+</button><button class="meta-chip copy-email-btn" id="copy-ieee-email-btn" title="Click to copy email" type="button">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="16" rx="2" width="20" x="2" y="4"></rect>
+<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+</svg>
+<span id="ieee-email-display">ting.bi [AT] ieee.org</span>
+</button>
+<span class="meta-chip">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+<span id="profile-office"></span>
+</span>
+</div>
+<div class="hero-links" id="profile-links"></div>
+<dl class="profile-facts" id="profile-facts"></dl></div>
+<div class="avatar-wrap">
+<img alt="Ting Bi" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" src="assets/avatar.jpg"/>
+<div aria-hidden="true" class="avatar-fallback">TB</div>
+</div></section>
 
-      <div class="hero-info">
-        <div class="hero-name-row">
-          <h1 id="profile-name">Ting Bi</h1>
-          <span class="name-secondary" id="profile-name-secondary">毕挺</span>
-        </div>
-        <p class="hero-role" id="profile-role"></p>
-        <p class="hero-affil" id="profile-affil"></p>
 
-        <div class="hero-meta">
-          <button class="meta-chip copy-email-btn" id="copy-email-btn" type="button" title="Click to copy email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg>
-            <span id="profile-email-display">tingbi [AT] hust.edu.cn</span>
-          </button>
 
-          <span class="meta-chip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            <span id="profile-office"></span>
-          </span>
-        </div>
 
-        <div class="hero-links" id="profile-links"></div>
-      </div>
-    </section>
 
-    <section id="about" class="section-block">
-      <h2 class="section-title" data-i18n="sections.about">About</h2>
-      <div class="about-content" id="about-content"></div>
+<section class="section-block" id="about">
+<h2 class="section-title" data-i18n="sections.about">About</h2>
+<div class="about-content" id="about-content"></div>
+<div class="recruiting-banner" id="recruiting-banner"></div>
 
-      <div class="recruiting-banner" id="recruiting-banner"></div>
 
-      <h3 class="subsection-title" data-i18n="sections.interests">Research Interests</h3>
-      <div class="tags-wrap" id="interests-list"></div>
-    </section>
+</section><section class="section-block" id="research"><h2 class="section-title" data-i18n="sections.research">Research Directions</h2><div class="research-grid" id="interests-list"></div></section><section class="section-block" id="news">
+<h2 class="section-title" data-i18n="sections.news">News</h2>
+<ul class="news-list" id="news-list"></ul>
+</section><section class="section-block" id="service">
+<h2 class="section-title" data-i18n="sections.service">Academic Service</h2>
+<div class="service-grid" id="service-list"></div>
+</section><section class="section-block" id="publications">
+<div class="section-header-row">
+<div>
+<h2 class="section-title" data-i18n="sections.publications">Publications</h2>
+<p class="section-note" hidden="" id="pub-note"></p>
+</div>
+<div class="pub-controls" hidden="">
+<div class="filter-group" id="pub-filter-group" role="tablist">
+<button class="filter-btn active" data-filter="all" data-i18n="pub.all">All</button>
+<button class="filter-btn" data-filter="journal" data-i18n="pub.journal">Journal</button>
+<button class="filter-btn" data-filter="conference" data-i18n="pub.conference">Conference</button>
+</div>
+<input aria-label="Filter publications" class="pub-search" id="pub-search" placeholder="Filter by keyword or venue..." type="search"/>
+</div>
+<a class="social-link" href="publications.html" id="all-publications-link">All Publications ↗</a></div>
+<div id="publications-container"></div>
+</section></main>
+<footer class="footer">
+<div class="container footer-inner">
+<p id="footer-copy"></p>
+<p id="footer-updated"></p>
+</div>
+</footer>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
 
-    <section id="news" class="section-block">
-      <h2 class="section-title" data-i18n="sections.news">News</h2>
-      <ul class="news-list" id="news-list"></ul>
-    </section>
 
-    <section id="publications" class="section-block">
-      <div class="section-header-row">
-        <div>
-          <h2 class="section-title" data-i18n="sections.publications">Publications</h2>
-          <p class="section-note" id="pub-note"></p>
-        </div>
 
-        <div class="pub-controls">
-          <div class="filter-group" id="pub-filter-group" role="tablist">
-            <button class="filter-btn active" data-filter="all" data-i18n="pub.all">All</button>
-            <button class="filter-btn" data-filter="journal" data-i18n="pub.journal">Journal</button>
-            <button class="filter-btn" data-filter="conference" data-i18n="pub.conference">Conference</button>
-          </div>
-          <input
-            type="search"
-            id="pub-search"
-            class="pub-search"
-            placeholder="Filter by keyword or venue..."
-            aria-label="Filter publications"
-          />
-        </div>
-      </div>
-
-      <div id="publications-container"></div>
-    </section>
-
-    <section id="experience" class="section-block two-col-grid">
-      <div>
-        <h2 class="section-title" data-i18n="sections.experience">Experience</h2>
-        <div class="timeline" id="experience-list"></div>
-      </div>
-      <div>
-        <h2 class="section-title" data-i18n="sections.education">Education</h2>
-        <div class="timeline" id="education-list"></div>
-      </div>
-    </section>
-
-    <section id="service" class="section-block">
-      <h2 class="section-title" data-i18n="sections.service">Academic Service</h2>
-      <div class="service-grid" id="service-list"></div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p id="footer-copy"></p>
-      <p id="footer-updated"></p>
-    </div>
-  </footer>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <script src="data.js"></script>
-  <script src="script.js"></script>
-  <script src="research-upgrade.js"></script>
-</body>
+<script src="data.js"></script><script src="script.js"></script></body>
 </html>
