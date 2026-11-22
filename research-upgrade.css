@@ -1,0 +1,10 @@
+/* Additive styles: keep the original style.css unchanged. */
+#interests-list.research-directions-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;}
+.research-direction-card {min-width:0;padding:22px;border:1px solid var(--border,#e5e7eb);border-radius:14px;background:var(--surface,#fff);transition:transform .18s ease,border-color .18s ease;}
+.research-direction-primary {border-color:var(--accent-border,#bfdbfe);background:var(--accent-soft,#eff6ff);}
+.research-direction-card:hover {transform:translateY(-3px);border-color:var(--accent,#1d4ed8);}
+.research-direction-meta {font-family:var(--font-mono,monospace);font-size:.75rem;font-weight:500;color:var(--accent,#1d4ed8);margin-bottom:10px;}
+.research-direction-card h4 {margin:0 0 10px;font-size:1.02rem;line-height:1.5;color:var(--text,#111827);overflow-wrap:anywhere;}
+.research-direction-card p {margin:0;color:var(--text-secondary,#4b5563);font-size:.92rem;line-height:1.8;}
+@media(max-width:680px){#interests-list.research-directions-grid {grid-template-columns:1fr;}.research-direction-card {padding:18px;}}
+@media(prefers-reduced-motion:reduce){.research-direction-card {transition:none;}.research-direction-card:hover {transform:none;}}
