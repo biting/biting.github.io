@@ -126,8 +126,7 @@ const SITE_DATA = {
   },
   "about": {
     "en": [
-      "I am an Associate Professor at the Research Center of 6G Mobile Communications, School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST), China. I serve as an Associate Editor of <em>IEEE Transactions on Broadcasting</em> and am a member of IEEE and ACM.",
-      "I received my B.Eng. in Software Engineering from Wuhan University in 2010, and my master’s (2011) and Ph.D. (2017) degrees in Telecommunications from Dublin City University (DCU), Ireland. I was a Postdoctoral Researcher at the Performance Engineering Laboratory and Insight Centre for Data Analytics at DCU (2017–2020), and an Assistant Professor at Maynooth University (2020–2023). I joined HUST in July 2023."
+      "I am an Associate Professor at the Research Center of 6G Mobile Communications, School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST), China. Before joining HUST, I was an Assistant Professor in the School of Computer Science and Maynooth International Engineering College at Maynooth University. I received my B.Eng. in Software Engineering from Wuhan University in 2010, and my master’s (2011) and Ph.D. (2017) degrees in Telecommunications from Dublin City University (DCU), Ireland."
     ],
     "zh": [
       "现任华中科技大学网络空间安全学院6G移动通信研究中心（天地一体化实验室）副教授，担任 <em>IEEE Transactions on Broadcasting</em> 副主编，IEEE / ACM 会员。",
