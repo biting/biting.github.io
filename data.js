@@ -68,7 +68,7 @@ const SITE_DATA = {
   },
 
   recruiting: {
-    en: "<strong>Recruiting:</strong> Looking for self-motivated Ph.D. and Master's students interested in <strong>multi-sensory media, 6G wireless networks, XR, HCI, and trustworthy multimodal AI</strong>. Please feel free to reach out via email with your CV.",
+    en: "<strong>Recruiting:</strong> Looking for self-motivated Ph.D. and Master's students interested in <strong>Multi-sensory Media, 6G Wireless Networks, XR, HCI, and Trustworthy Multimodal AI</strong>. Please feel free to reach out via email with your CV.",
     zh: "<strong>招生信息：</strong>长期招收对<strong>多感官媒体、6G 无线网络、扩展现实（XR）、人机交互（HCI）以及可信多模态人工智能</strong>感兴趣的博士生、硕士生及科研实习生。欢迎发送个人简历至邮箱联系！"
   },
 
@@ -182,12 +182,12 @@ const SITE_DATA = {
       type: "journal",
       badge: "IEEE TCCN '25",
       title: "GOMOS: A GNN-Assisted Network-Media Integrated Optimization Framework for Massive Mobile Live Streaming",
-      authors: "[TODO: First Author], <strong>Ting Bi</strong>, Mingjie Feng, Tao Jiang",
+      authors: "Feng, Fangzheng, <strong>Ting Bi</strong>, Mingjie Feng, Tao Jiang",
       venue: "IEEE Transactions on Cognitive Communications and Networking (TCCN), 2025.",
       paperUrl: "",
       codeUrl: "",
       bibtex: `@article{gomos2025tccn,
-  author  = {[TODO: First Author] and Bi, Ting and Feng, Mingjie and Jiang, Tao},
+  author  = {Feng, Fangzheng  and Bi, Ting and Feng, Mingjie and Jiang, Tao},
   title   = {{GOMOS: A GNN-Assisted Network-Media Integrated Optimization Framework for Massive Mobile Live Streaming}},
   journal = {IEEE Transactions on Cognitive Communications and Networking},
   year    = {2025},
@@ -244,12 +244,12 @@ const SITE_DATA = {
     en: [
       { title: "Associate Editor", content: "IEEE Transactions on Broadcasting" },
       { title: "Membership", content: "IEEE Member, ACM Member, IEEE Communications Society, IEEE Broadcast Technology Society" },
-      { title: "TPC Member & Reviewer", content: "ACM Web Conference (WWW 2027), AAAI 2026, ACM Multimedia (MM 2025–2026), IEEE INFOCOM, GLOBECOM, ICC, WCNC, IEEE TMC, IEEE IoTJ, IEEE TWC, IEEE TVT, etc." }
+      { title: "TPC Member & Reviewer", content: "ACM Web Conference (WWW 2027), AAAI 2026, ACM Multimedia (MM 2025–2026), INFOCOM, GLOBECOM, ICC, WCNC, IEEE TMC, IEEE IoTJ, IEEE TWC, IEEE TVT, etc." }
     ],
     zh: [
-      { title: "期刊副主编（Associate Editor）", content: "IEEE Transactions on Broadcasting" },
+      { title: "期刊副编辑（Associate Editor）", content: "IEEE Transactions on Broadcasting" },
       { title: "学术会员", content: "IEEE 会员、ACM 会员、IEEE 通信学会（ComSoc）、IEEE 广播技术学会（BTS）" },
-      { title: "程序委员会委员 / 审稿人", content: "ACM Web Conference (WWW 2027)、AAAI 2026、ACM MM (2025–2026)、IEEE INFOCOM、GLOBECOM、ICC、WCNC、IEEE TMC、IoTJ、TWC、TVT 等。" }
+      { title: "程序委员会委员 / 审稿人", content: "ACM Web Conference (WWW 2027)、AAAI 2026、ACM Multimedia (MM2025–2026)、INFOCOM、GLOBECOM、ICC、WCNC、IEEE TMC、IoTJ、TWC、TVT 等。" }
     ]
   }
 };
