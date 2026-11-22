@@ -11,6 +11,8 @@
 const SITE_DATA = {
   "emailUser": "tingbi",
   "emailDomain": "hust.edu.cn",
+  "emailUser": "ting.bi",
+  "emailDomain": "ieee.org",
   "lastUpdated": "2026-11-22",
   "ui": {
     "en": {
