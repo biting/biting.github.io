@@ -129,8 +129,7 @@ const SITE_DATA = {
       "I am an Associate Professor at the Research Center of 6G Mobile Communications, School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST), China. Before joining HUST, I was an Assistant Professor in the School of Computer Science and Maynooth International Engineering College at Maynooth University. I received my B.Eng. in Software Engineering from Wuhan University in 2010, and my master’s (2011) and Ph.D. (2017) degrees in Telecommunications from Dublin City University (DCU), Ireland."
     ],
     "zh": [
-      "现任华中科技大学网络空间安全学院6G移动通信研究中心（天地一体化实验室）副教授，担任 <em>IEEE Transactions on Broadcasting</em> 副主编，IEEE / ACM 会员。",
-      "2010年获武汉大学软件工程学士学位，2011年和2017年先后获爱尔兰都柏林城市大学通信工程硕士和博士学位。2017–2020年在DCU性能工程实验室与Insight数据分析中心担任博士后研究员，2020–2023年在爱尔兰梅努斯大学担任助理教授，2023年7月加入华中科技大学。"
+      "现任华中科技大学网络空间安全学院6G移动通信研究中心副教授。加入华中科技大学前，曾任爱尔兰梅努斯大学计算机学院及梅努斯国际工程学院助理教授。2010年获武汉大学软件工程学士学位，2011年和2017年先后获爱尔兰都柏林城市大学（DCU）通信工程硕士与博士学位。"
     ]
   },
   "recruiting": {
